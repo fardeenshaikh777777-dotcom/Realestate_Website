@@ -55,9 +55,35 @@ Try the workflow: sign in as **Daniel** → create a listing (lands in *pending*
 npm install
 npm run dev      # local dev
 npm run build    # production build → dist/
+npm run preview  # serve the production build locally
 ```
 
 Footer → *Reset demo data* reseeds the store at any time.
+
+## Deploying to GitHub Pages
+
+Live at `https://<username>.github.io/Realestate_Website/`.
+
+**How the base path works** — `vite.config.js` detects CI: in GitHub Actions it
+bakes in `base: "/Realestate_Website/"`; locally it emits relative paths so the
+same `dist/` runs from any location. The app uses **hash routing**, so Pages
+needs no SPA 404 fallback.
+
+**Recommended: GitHub Actions** (already configured in `.github/workflows/deploy.yml`)
+
+1. Repo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push to `main` (the production branch) — the workflow runs
+   `npm ci` → `npm run build` → publishes `dist/`.
+3. Keep `package-lock.json` committed (the workflow uses `npm ci`).
+
+**Manual fallback: branch deploy**
+
+1. Repo → Settings → Pages → Source: **Deploy from a branch** → `gh-pages` / `/ (root)`.
+2. Run `npm run deploy` (builds with `--base=/Realestate_Website/` and pushes `dist/`).
+
+**Secrets** — this app is fully client-side: no env vars, API keys, or tokens
+are required. `.gitignore` blocks `.env*` and key files so credentials can
+never be committed.
 
 ## Design system
 
