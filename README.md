@@ -1,4 +1,4 @@
-# Atrium Estates — Full-Stack Real Estate Platform (Demo Build)
+# Atrium Estates —  Real Estate Platform
 
 A complete real-estate marketplace: curated listings, search + stylized map view,
 property detail with gallery/lightbox, JWT-style auth, and three role-based
