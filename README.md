@@ -38,16 +38,7 @@ with realistic latency, input validation, and role checks (`BUYER` / `AGENT` /
 (composite index on `(city, price, type)` + `lat/lng`), `PropertyImage`,
 `Booking`, `Inquiry`, `Review`, `Favorite`, `Payment`.
 
-## Demo accounts
 
-| Role  | Email              | Password   |
-| ----- | ------------------ | ---------- |
-| Buyer | sofia@mail.com     | demo1234   |
-| Agent | daniel@atrium.est  | demo1234   |
-| Admin | admin@atrium.est   | demo1234   |
-
-Try the workflow: sign in as **Daniel** → create a listing (lands in *pending*)
-→ sign in as **Amara** → approve it → it goes live on the marketplace.
 
 ## Run
 
